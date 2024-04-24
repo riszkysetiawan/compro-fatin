@@ -5,8 +5,13 @@
                 <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
                     <img src="{{ asset('navbar/logo.png') }}" alt="logo">
                 </a>
-                <div class="image-section d-flex">
-                    <a href=""></a>
+                <div class="image-section d-flex m-0 p-0 mb-3">
+                    <a href=""><img src="{{ asset('navbar/ig.png') }}" class="rounded-pill" alt=""
+                            width="45px"></a>
+                    <a href=""><img src="{{ asset('navbar/twitter.png') }}" alt="" width="45px"></a>
+                    <a href=""><img src="{{ asset('navbar/twitter.png') }}" alt="" width="45px"></a>
+                    <a href=""><img src="{{ asset('navbar/yt.jpg') }}" alt="" width="45px"></a>
+                    <a href=""><img src="{{ asset('navbar/linkedin.png') }}" alt="" width="45px"></a>
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2 d-flex align-items-center">
