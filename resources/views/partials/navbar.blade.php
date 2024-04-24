@@ -10,10 +10,10 @@
                     alt=""></a>
             <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Home</a>
+                    <a class="nav-link " href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="/about">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link ">Portofolio</a>
