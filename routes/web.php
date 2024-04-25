@@ -25,3 +25,6 @@ Route::get('/portofolio-us', function () {
 Route::get('/contact', function () {
     return view('frontend.contact');
 });
+Route::get('/services', function () {
+    return view('frontend.services');
+});

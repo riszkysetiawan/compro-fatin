@@ -237,7 +237,7 @@
     {{-- section 3 end --}}
 
     {{-- section 4 start --}}
-    {{-- <div class="home-4 " style="background-color: #FFD1E3; margin-top: -4rem">
+    <div class="home-4 " style="background-color: #FFD1E3; margin-top: -4rem">
         <div class="container">
             <div style="padding-top: 6rem">
                 <h3 class="text-center">Bergabunglah dengan komunitas untuk mengembangkan
@@ -252,14 +252,14 @@
                     style="background-color: #C24914">E-catalogue IWAPI</button>
             </div>
         </div>
-    </div> --}}
+    </div>
     {{-- sectiuion 4 --}}
 
     {{-- section 5 --}}
     <div class="home-5 mb-5">
         <div class="container">
-            {{-- <h4 class="text-center pt-5">Kunjungi website IWAPI atau hubungi IWAPI untuk informasi lebih <br>
-                lanjut tentang program dan peluang yang tersedia.</h4> --}}
+            <h4 class="text-center pt-5">Kunjungi website IWAPI atau hubungi IWAPI untuk informasi lebih <br>
+                lanjut tentang program dan peluang yang tersedia.</h4>
             <div class="py-5">
                 <h3 class="text-center" style="color: #C24914">Hubungi Kami</h3>
                 <h4 class="text-center">Untuk pemesanan jasa dan konsultasi silakan menghubungi kami melalui <br>

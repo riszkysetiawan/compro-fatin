@@ -22,9 +22,54 @@
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                         aria-expanded="false">Services</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <div class="row kontainer-utama" style="width: 38rem">
+                            <div class="col-md-6">
+                                <li>
+                                    <a class="dropdown-item d-flex " href="#">
+                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center">Creative Design</span>
+                                    </a>
+                                    <p class="text-center fs-6"> Pembuatan Konten Video & Video Editing </p>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex " href="#">
+                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center">Video Production</span>
+                                    </a>
+                                    <p class="text-center fs-6"> Pembuatan Konten Video & Video Editing </p>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex " href="#">
+                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center">Commercial Photography</span>
+                                    </a>
+                                    <p class="text-center fs-6"> Foto Produk & Komersil </p>
+                                </li>
+                            </div>
+                            <div class="col-md-6">
+                                <li>
+                                    <a class="dropdown-item d-flex " href="#">
+                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center">Social Media Management</span>
+                                    </a>
+                                    <p class="text-center fs-6"> Strategi & Manajemen</p>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex " href="#">
+                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center">Content Marketing</span>
+                                    </a>
+                                    <p class="text-center fs-6 "> Copywriting</p>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex " href="#">
+                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center">Website Development</span>
+                                    </a>
+                                    <p class="text-center fs-6"> Pembuatan Website & UI UX Design </p>
+                                </li>
+                            </div>
+                        </div>
                     </ul>
                 </li>
             </ul>

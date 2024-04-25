@@ -1,5 +1,6 @@
 @extends('partials.index')
 @section('container')
+    {{-- section 1 --}}
     <div class="contact-us-1 py-5">
         <div class="container">
             <h1 class="text-center" style="color: #C24914">Hubungi Kami</h1>

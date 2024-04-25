@@ -39,3 +39,34 @@
             max-width: 40%;
           }
     }
+
+    @media (max-width: 991px) {
+        .dropdown-menu .row {
+            max-width: 20rem;
+        }
+        .dropdown-menu .col-md-6 {
+            width: 100%;
+        }
+
+        .dropdown-menu .dropdown-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .dropdown-menu .dropdown-item .fa-regular {
+            font-size: 30px;
+        }
+
+        .dropdown-menu .dropdown-item .pl-3 {
+            padding-left: 0 !important;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .dropdown-menu .dropdown-item p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    }

@@ -8,7 +8,7 @@
             <div class="konten-portofolio-1">
                 <form action="" class="my-3 py-3">
                     <div class="row">
-                        <div class="col-md-4 align-items-end text-end">
+                        <div class="col-md-4 text-end pilih-kategori">
                             <label for="" class="form-check-label">Pilih Kategori Web</label>
                         </div>
                         <div class="col-md-6">
