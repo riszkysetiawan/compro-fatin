@@ -13,10 +13,10 @@
                     <a class="nav-link " href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About Us</a>
+                    <a class="nav-link" href="/about-us">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ">Portofolio</a>
+                    <a class="nav-link" href="/portofolio-us">Portofolio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
@@ -29,7 +29,7 @@
                 </li>
             </ul>
             <div class="d-lg-flex col-lg-3 justify-content-lg-end ">
-                <button class="btn rounded-pill text-white" style="background-color: #C24914">Contact Us</button>
+                <a class="btn rounded-pill text-white" style="background-color: #C24914" href="/contact">Contact Us</a>
             </div>
         </div>
     </div>

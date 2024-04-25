@@ -111,8 +111,10 @@
                         <h6>Direktur</h6>
                     </div>
                 </div>
-                <div class="col-md-4"> <img src="{{ asset('slider/slider1.png') }}" alt="Nama Gambar"
-                        class="img-fluid rounded-pill" style="background-color: black">
+
+                <div class="col-md-4">
+                    <img src="{{ asset('slider/slider1.png') }}" alt="Nama Gambar" class="img-fluid rounded-pill"
+                        style="background-color: black">
                     <div class="text-center pt-4">
                         <h6 style="color: #C24914">Lutfi Amalia Adel, S.Pd, M.Si</h6>
                         <h6>Direktur</h6>

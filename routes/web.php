@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('home.index');
 });
 Route::get('/about-us', function () {
-    return view('about.index');
+    return view('frontend.about');
+});
+Route::get('/portofolio-us', function () {
+    return view('frontend.portofolio');
+});
+Route::get('/contact', function () {
+    return view('frontend.contact');
 });

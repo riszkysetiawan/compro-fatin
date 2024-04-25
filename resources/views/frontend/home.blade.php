@@ -312,6 +312,7 @@
             container.appendChild(tombolClose);
 
             tombolClose.classList.add("mx-auto", "my-3");
+            tombolSeeMore.classList.add("mx-auto", "my-3");
         });
     </script>
 @endsection
