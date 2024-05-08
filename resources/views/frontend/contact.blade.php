@@ -52,50 +52,6 @@
     {{-- section 2 end --}}
 
     {{-- section 3 start --}}
-    <div class="contact-us-2 py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4  text-center">
-                    <i class="fa-solid fa-calendar-days fs-1 mt-3"></i>
-                    <h6 class="pt-4">Office Hours</h6>
-                    <div class="keterangan">
-                        <h6>Senin - Jum’at
-                            09:00 - 17:00 WIB
-                            <br>
-                            (Selain Hari Libur Nasional)
-                        </h6>
-                        <hr style="border-color: black;">
-                        <a class="btn" href="">Contact Us! ></a>
-                    </div>
-                </div>
-                <div class="col-md-4  text-center">
-                    <i class="fa-solid fa-calendar-days fs-1 mt-3"></i>
-                    <h6 class="pt-4">Office Hours</h6>
-                    <div class="keterangan">
-                        <h6>Senin - Jum’at
-                            09:00 - 17:00 WIB
-                            <br>
-                            (Selain Hari Libur Nasional)
-                        </h6>
-                        <hr style="border-color: black;">
-                        <a class="btn" href="">Contact Us! ></a>
-                    </div>
-                </div>
-                <div class="col-md-4  text-center">
-                    <i class="fa-solid fa-envelope fs-1 mt-3"></i>
-                    <h6 class="pt-4">E-Mail</h6>
-                    <div class="keterangan">
-                        <h6>Senin - Jum’at
-                            09:00 - 17:00 WIB
-                            <br>
-                            (Selain Hari Libur Nasional)
-                        </h6>
-                        <hr style="border-color: black;">
-                        <a class="btn" href="">Contact Us! ></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    x
     {{-- section 3 end --}}
 @endsection

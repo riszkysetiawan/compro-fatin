@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('frontend.home');
 });
 Route::get('/about-us', function () {
     return view('frontend.about');
@@ -28,3 +28,12 @@ Route::get('/contact', function () {
 Route::get('/services', function () {
     return view('frontend.services');
 });
+Route::get('/login', function () {
+    return view('admin.login.login');
+});
+Route::get('/dashboard-admin', function () {
+    return view('admin.dashboard.index');
+});
+Route::get('/slider-admin', function () {
+    return view('admin.backend.slider.index');
+})->name('slider');
