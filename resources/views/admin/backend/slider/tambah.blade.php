@@ -1,4 +1,4 @@
-@extends('admin.partials.slider.update')
+@extends('admin.partials.slider.create')
 @section('container')
     <div class="container">
         <div class="container">
@@ -15,6 +15,8 @@
             </div>
             <!-- /BREADCRUMB -->
 
+
+
             <div class="row">
 
                 <div id="flHorizontalForm" class="col-lg-12 layout-spacing">
@@ -27,59 +29,47 @@
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-                            <form method="post" action="{{ route('slider.update', $slider->id) }}"
-                                enctype="multipart/form-data">
+                            <form method="post" action="{{ route('simpan.slider') }}" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
                                 <div class="row mb-3">
                                     <label for="inputEmail2" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="judul" class="form-control"
-                                            value="{{ $slider->judul }}" id="inputEmail2" required />
+                                        <input type="text" name="judul" class="form-control" id="inputEmail2"
+                                            required />
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Sub Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="sub_judul" class="form-control"
-                                            value="{{ $slider->sub_judul }}" id="inputPassword2" required />
+                                        <input type="text" name="sub_judul" class="form-control" id="inputPassword2"
+                                            required />
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Caption</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" value="{{ $slider->caption }}"
-                                            name="caption" id="inputPassword2"required />
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword2" class="col-sm-2 col-form-label">Foto Lama</label>
-                                    <div class="col-sm-10">
-                                        @if ($slider->foto)
-                                            <img src="{{ asset($slider->foto) }}" alt="Foto Lama" style="max-width: 200px;">
-                                        @else
-                                            <span>Tidak ada foto</span>
-                                        @endif
+                                        <input type="text" class="form-control" name="caption"
+                                            id="inputPassword2"required />
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Foto</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="foto" class="form-control" id="inputPassword2" />
+                                        <input type="file" name="foto" class="form-control" id="inputPassword2"
+                                            required />
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Text Button</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" value="{{ $slider->button }}"
-                                            name="button" id="inputPassword2"required />
+                                        <input type="text" class="form-control" name="button"
+                                            id="inputPassword2"required />
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">BG Foto</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="bg_foto"
-                                            value="{{ $slider->bg_foto }}" id="inputPassword2"
+                                        <input type="text" class="form-control" name="bg_foto" id="inputPassword2"
                                             placeholder="*Masukkan Warna Kode CSS "required />
                                     </div>
                                 </div>

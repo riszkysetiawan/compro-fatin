@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BannerSliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,13 @@ Route::get('/login', function () {
 Route::get('/dashboard-admin', function () {
     return view('admin.dashboard.index');
 });
-Route::get('/slider-admin', function () {
-    return view('admin.backend.slider.index');
-})->name('slider');
+Route::get('/slider-admin', [BannerSliderController::class, 'index'])->name('slider');
+
+Route::get('/create-slider', function () {
+    return view('admin.backend.slider.tambah');
+})->name('tambah.slider');
+
+Route::post('/simpan-slider', [BannerSliderController::class, 'store'])->name('simpan.slider');
+Route::delete('/delete-slider/{id}', [BannerSliderController::class, 'destroy'])->name('delete.slider');
+Route::get('/slider/{id}/edit', [BannerSliderController::class, 'edit'])->name('slider.edit');
+Route::put('/slider/{id}', [BannerSliderController::class, 'update'])->name('slider.update');

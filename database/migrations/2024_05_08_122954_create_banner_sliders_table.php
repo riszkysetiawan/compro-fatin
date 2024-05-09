@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('sub_judul');
             $table->string('caption');
             $table->string('button');
+            $table->string('foto');
             $table->string('bg_foto');
             $table->timestamps();
         });

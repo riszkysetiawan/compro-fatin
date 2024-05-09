@@ -1,4 +1,4 @@
-@extends('admin.backend.slider.main')
+@extends('admin.partials.slider.main')
 @section('container')
     <div class="layout-px-spacing">
         <div class="middle-content container-xxl p-0">
@@ -7,69 +7,63 @@
                 <nav class="breadcrumb-style-one" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Datatables</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Custom</li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Striped
+                        </li>
                     </ol>
+                    <a href="{{ route('tambah.slider') }}" class="btn btn-primary mt-2">Tambah Data</a>
                 </nav>
             </div>
             <!-- /BREADCRUMB -->
-            <div class="row layout-spacing">
-                <div class="col-lg-12">
-                    <div class="statbox widget box box-shadow">
-                        <div class="widget-content widget-content-area">
-                            <table id="style-3" class="table style-3 dt-table-hover">
-                                <thead>
+
+            <div class="row layout-top-spacing">
+                <div class="col-xl-12 col-lg-12 col-sm-12 layout-spacing">
+                    <div class="widget-content widget-content-area br-8">
+                        <table id="zero-config" class="table table-striped dt-table-hover" style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th>Gambar</th>
+                                    <th>Judul</th>
+                                    <th>Sub Judul</th>
+                                    <th>Keterangan</th>
+                                    <th>Tulisan Button</th>
+                                    <th>BG Foto</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($sliders as $slider)
                                     <tr>
-                                        <th class="checkbox-column text-center"> No </th>
-                                        <th class="text-center">Image</th>
-                                        <th>Judul</th>
-                                        <th>Sub Judul</th>
-                                        <th>Keterangan</th>
-                                        <th>Button</th>
-                                        <th class="text-center dt-no-sorting">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="checkbox-column text-center"> 1</td>
-                                        <td class="text-center">
-                                            <span><img src="../src/assets/img/profile-24.jpeg" class="profile-img"
-                                                    alt="avatar"></span>
+                                        <td>
+                                            <img src="{{ asset($slider->foto) }}" alt="Gambar" class="img-fluid " />
                                         </td>
-                                        <td>Nia</td>
-                                        <td>Hillyer</td>
-                                        <td>niaHill@yahoo.com</td>
-                                        <td>111-666-1111</td>
+                                        <td>{{ $slider->judul }}</td>
+                                        <td>{{ $slider->sub_judul }}</td>
+                                        <td>{{ $slider->caption }}</td>
+                                        <td>{{ $slider->button }}</td>
+                                        <td>{{ $slider->bg_foto }}</td>
                                         <td class="text-center">
-                                            <ul class="table-controls">
-                                                <li><a href="javascript:void(0);" class="bs-tooltip"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"
-                                                        data-original-title="Edit"><svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            class="feather feather-edit-2 p-1 br-8 mb-1">
-                                                            <path
-                                                                d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
-                                                            </path>
-                                                        </svg></a></li>
-                                                <li><a href="javascript:void(0);" class="bs-tooltip"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
-                                                        data-original-title="Delete"><svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            class="feather feather-trash p-1 br-8 mb-1">
-                                                            <polyline points="3 6 5 6 21 6"></polyline>
-                                                            <path
-                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                            </path>
-                                                        </svg></a></li>
-                                            </ul>
+                                            <a href="{{ route('slider.edit', encrypt($slider->id)) }}"
+                                                class="badge rounded-pill bg-primary">Edit</a>
+                                            <a href="{{ route('delete.slider', $slider->id) }}"
+                                                class="badge rounded-pill bg-danger" data-confirm-delete="true">Hapus</a>
                                         </td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                @endforeach
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Gambar</th>
+                                    <th>Judul</th>
+                                    <th>Sub Judul</th>
+                                    <th>Keterangan</th>
+                                    <th>Tulisan Button</th>
+                                    <th>BG Foto</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
                     </div>
                 </div>
             </div>
