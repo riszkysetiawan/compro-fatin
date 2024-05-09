@@ -32,8 +32,8 @@ Route::get('/portofolio-us', function () {
 Route::get('/contact', function () {
     return view('frontend.contact');
 });
-Route::get('/services', function () {
-    return view('frontend.services');
+Route::get('/services/foto-product', function () {
+    return view('frontend.services.fotoproduk');
 });
 
 
@@ -85,7 +85,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/portofolio-admin', [PortofolioController::class, 'index'])->name('portofolio.index');
     Route::get('/create-portofolio-admin', [PortofolioController::class, 'create'])->name('tambah.portofolio');
     Route::post('/simpan-portofolio', [PortofolioController::class, 'store'])->name('simpan.portofolio');
-    Route::put('/user/{id}', [PortofolioController::class, 'update'])->name('portofolio.update');
+    Route::put('/portofolio/{id}', [PortofolioController::class, 'update'])->name('update.portofolio');
     Route::get('/portofolio/{id}/edit', [PortofolioController::class, 'edit'])->name('portofolio.edit');
     Route::delete('/delete-portofolio/{id}', [PortofolioController::class, 'destroy'])->name('delete.portofolio');
 

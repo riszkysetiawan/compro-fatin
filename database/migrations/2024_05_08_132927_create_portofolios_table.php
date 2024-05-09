@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('foto');
             $table->string('nama_portofolio');
             $table->string('keterangan');
+            $table->string('url');
             $table->timestamps();
-
             $table->foreign('id_kategori')->references('id')->on('kategori')->onDelete('cascade')->onUpdate('cascade');
         });
     }

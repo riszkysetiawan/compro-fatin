@@ -52,6 +52,6 @@
     {{-- section 2 end --}}
 
     {{-- section 3 start --}}
-    x
+
     {{-- section 3 end --}}
 @endsection

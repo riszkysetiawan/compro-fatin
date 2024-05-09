@@ -60,6 +60,13 @@
                                             required />
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword2" class="col-sm-2 col-form-label">URL</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="url" class="form-control" id="inputPassword2"
+                                            required />
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-primary">
                                     Simpan
                                 </button>

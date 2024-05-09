@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('caption');
             $table->string('button');
             $table->string('foto');
+            $table->string('foto_utama');
             $table->string('bg_foto');
             $table->timestamps();
         });

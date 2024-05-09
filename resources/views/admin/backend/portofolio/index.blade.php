@@ -25,6 +25,7 @@
                                     <th>Kategori</th>
                                     <th>Foto</th>
                                     <th>Nama Portofolio</th>
+                                    <th>URL</th>
                                     <th>Keterangan</th>
                                     <th class="text-center">Action</th>
                                 </tr>
@@ -38,6 +39,7 @@
                                                 style="max-width: 200px" />
                                         </td>
                                         <td>{{ $portofolio->nama_portofolio }}</td>
+                                        <td>{{ $portofolio->url }}</td>
                                         <td>{{ $portofolio->keterangan }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('portofolio.edit', encrypt($portofolio->id)) }}"
@@ -53,6 +55,7 @@
                                     <th>Kategori</th>
                                     <th>Foto</th>
                                     <th>Nama Portofolio</th>
+                                    <th>URL</th>
                                     <th>Keterangan</th>
                                     <th class="text-center">Action</th>
                                 </tr>

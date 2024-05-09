@@ -27,21 +27,26 @@
                                 <li>
                                     <a class="dropdown-item d-flex " href="#">
                                         <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
-                                        <span class="pl-3 justify-content-center">Creative Design</span>
+                                        <span class="pl-3 justify-content-center font-weight-bold"
+                                            style="color: #C24914">Creative
+                                            Design</span>
                                     </a>
                                     <p class="text-center fs-6"> Pembuatan Konten Video & Video Editing </p>
                                 </li>
                                 <li>
                                     <a class="dropdown-item d-flex " href="#">
-                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
-                                        <span class="pl-3 justify-content-center">Video Production</span>
+                                        <i class="fa-solid fa-play " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center font-weight-bold"
+                                            style="color: #C24914">Video Production</span>
                                     </a>
                                     <p class="text-center fs-6"> Pembuatan Konten Video & Video Editing </p>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex " href="#">
-                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
-                                        <span class="pl-3 justify-content-center">Commercial Photography</span>
+                                    <a class="dropdown-item d-flex " href="/services/foto-product">
+                                        <i class="fa-regular fa-image" style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center font-weight-bold"
+                                            style="color: #C24914">Commercial
+                                            Photography</span>
                                     </a>
                                     <p class="text-center fs-6"> Foto Produk & Komersil </p>
                                 </li>
@@ -49,22 +54,25 @@
                             <div class="col-md-6">
                                 <li>
                                     <a class="dropdown-item d-flex " href="#">
-                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
-                                        <span class="pl-3 justify-content-center">Social Media Management</span>
+                                        <i class="fa-solid fa-share-nodes" style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center font-weight-bold"
+                                            style="color: #C24914">Social Media Management</span>
                                     </a>
                                     <p class="text-center fs-6"> Strategi & Manajemen</p>
                                 </li>
                                 <li>
                                     <a class="dropdown-item d-flex " href="#">
-                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
-                                        <span class="pl-3 justify-content-center">Content Marketing</span>
+                                        <i class="fa-solid fa-note-sticky " style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center font-weight-bold"
+                                            style="color: #C24914">Content Marketing</span>
                                     </a>
                                     <p class="text-center fs-6 "> Copywriting</p>
                                 </li>
                                 <li>
                                     <a class="dropdown-item d-flex " href="#">
-                                        <i class="fa-regular fa-note-sticky " style="font-size: 40px;"></i>
-                                        <span class="pl-3 justify-content-center">Website Development</span>
+                                        <i class="fa-brands fa-safari" style="font-size: 40px;"></i>
+                                        <span class="pl-3 justify-content-center font-weight-bold"
+                                            style="color: #C24914">Website Development</span>
                                     </a>
                                     <p class="text-center fs-6"> Pembuatan Website & UI UX Design </p>
                                 </li>

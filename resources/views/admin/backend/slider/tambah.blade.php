@@ -60,6 +60,13 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
+                                    <label for="inputPassword2" class="col-sm-2 col-form-label">Foto Utama</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="foto_utama" class="form-control" id="inputPassword2"
+                                            required />
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Text Button</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="button"

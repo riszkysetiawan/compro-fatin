@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-                            <form method="post" action="{{ route('portofolio.update', $portofolio->id) }}"
+                            <form method="post" action="{{ route('update.portofolio', $portofolio->id) }}"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -73,6 +73,13 @@
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Foto</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="foto" class="form-control" id="inputPassword2" />
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword2" class="col-sm-2 col-form-label">URL</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="url" class="form-control"
+                                            value="{{ $portofolio->url }}" id="inputPassword2" required />
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">

@@ -12,12 +12,13 @@
             <div class="navbar-nav theme-brand flex-row  text-center">
                 <div class="nav-logo">
                     <div class="nav-item theme-logo">
-                        <a href="./index.html">
-                            <img src="{{ asset('navbar/logo.png') }}" class="navbar-logo" alt="logo">
+                        <a href="/dashboard-admin">
+                            {{-- <img src="{{ asset('navbar/logo.png') }}" class="navbar-logo" alt="logo"
+                                style="max-width: 15px"> --}}
                         </a>
                     </div>
                     <div class="nav-item theme-text">
-                        <a href="./index.html" class="nav-link"> CORK </a>
+                        <a href="/dashboard-admin" class="nav-link"> Dashboard </a>
                     </div>
                 </div>
                 <div class="nav-item sidebar-toggle">

@@ -253,7 +253,7 @@
             </div>
         </div>
     </div>
-    {{-- sectiuion 4 --}}
+    {{-- section 4 --}}
 
     {{-- section 5 --}}
     <div class="home-5 mb-5">

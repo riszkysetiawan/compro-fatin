@@ -69,6 +69,23 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
+                                    <label for="inputPassword2" class="col-sm-2 col-form-label">Foto Utama Lama</label>
+                                    <div class="col-sm-10">
+                                        @if ($slider->foto)
+                                            <img src="{{ asset($slider->foto_utama) }}" alt="Foto Lama"
+                                                style="max-width: 200px;">
+                                        @else
+                                            <span>Tidak ada foto</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword2" class="col-sm-2 col-form-label">Foto Utama</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="foto_utama" class="form-control" id="inputPassword2" />
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Text Button</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" value="{{ $slider->button }}"

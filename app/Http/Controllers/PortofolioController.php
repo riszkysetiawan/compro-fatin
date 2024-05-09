@@ -50,6 +50,7 @@ class PortofolioController extends Controller
                 'id_kategori' => 'required|integer',
                 'nama_portofolio' => 'required|string',
                 'keterangan' => 'required|string',
+                'url' => 'required|string',
                 'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
@@ -61,14 +62,16 @@ class PortofolioController extends Controller
             $portofolio->id_kategori = $validated['id_kategori'];
             $portofolio->nama_portofolio = $validated['nama_portofolio'];
             $portofolio->keterangan = $validated['keterangan'];
-            $portofolio->foto = $namaFile;
-            $portofolio->save();
+            $portofolio->url = $validated['url'];
 
+            $portofolio->foto = str_replace('public/', 'storage/', $path);
+            $portofolio->save();
             return redirect()->route('portofolio.index')->with('success', 'Data portofolio berhasil disimpan.');
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->with('error', 'Terjadi kesalahan saat menyimpan data portofolio.');
         }
     }
+
 
     /**
      * Display the specified resource.
@@ -96,12 +99,12 @@ class PortofolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request);
         try {
             $validatedData = $request->validate([
                 'id_kategori' => 'required|integer',
                 'nama_portofolio' => 'required|string',
                 'keterangan' => 'required|string',
+                'url' => 'required|string',
                 'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
@@ -109,13 +112,16 @@ class PortofolioController extends Controller
             $portofolio->id_kategori = $validatedData['id_kategori'];
             $portofolio->nama_portofolio = $validatedData['nama_portofolio'];
             $portofolio->keterangan = $validatedData['keterangan'];
+            $portofolio->url = $validatedData['url'];
 
             if ($request->hasFile('foto')) {
                 Storage::delete($portofolio->foto);
                 $fotoPath = $request->file('foto')->store('public/portofolio');
+
                 $fotoUrl = str_replace('public/', 'storage/', $fotoPath);
                 $portofolio->foto = $fotoUrl;
             }
+
             $portofolio->save();
             Alert::success('Success', 'Data Berhasil Diupdate')->showConfirmButton('OK', '#3085d6');
             return redirect()->back();
