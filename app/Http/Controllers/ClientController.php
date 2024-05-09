@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
-use App\Http\Requests\StoreKategoriRequest;
-use App\Http\Requests\UpdateKategoriRequest;
+use App\Models\Client;
+use App\Http\Requests\StoreClientRequest;
+use App\Http\Requests\UpdateClientRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Storage;
 
-class KategoriController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,17 +21,16 @@ class KategoriController extends Controller
         $title = 'Delete Data!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
-        $kategories = DB::table('kategori')->get();
-        return view('admin.backend.kategori.index', ['kategories' => $kategories]);
+        $clients = DB::table('clients')->get();
+        return view('admin.backend.client.index', ['clients' => $clients]);
     }
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('admin.backend.client.tambah');
     }
 
     /**
@@ -38,27 +38,31 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $validatedData = $request->validate([
-                'kategori' => 'required|string',
-            ]);
-            $kategori = new Kategori([
-                'kategori' => $validatedData['kategori'],
-            ]);
-            $kategori->save();
-            Alert::success('Success', 'Data saved successfully!')->showConfirmButton('OK', '#3085d6');
-            return redirect()->back();
-        } catch (\Exception $e) {
-            Alert::error('Error', 'Gagal menyimpan data')->showConfirmButton('OK', '#d33');
-            return redirect()->back();
+        $validatedData = $request->validate([
+            'nama_client' => 'required|string',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $client = new Client([
+            'nama_client' => $validatedData['nama_client'],
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $fotoPath = $request->file('logo')->store('public/client');
+            $fotoUrl = str_replace('public/', 'storage/', $fotoPath);
+            $client->logo = $fotoUrl;
         }
+        $client->save();
+        Alert::success('Success', 'Data saved successfully!')->showConfirmButton('OK', '#3085d6');
+
+        return redirect()->back();
     }
 
 
     /**
      * Display the specified resource.
      */
-    public function show(Kategori $kategori)
+    public function show(Client $client)
     {
         //
     }
@@ -69,9 +73,10 @@ class KategoriController extends Controller
     public function edit($encryptedId)
     {
         $id = Crypt::decrypt($encryptedId);
-        $kategories = Kategori::findOrFail($id);
-        return view('admin.backend.kategori.update', compact('kategories'));
+        $clients = Client::findOrFail($id);
+        return view('admin.backend.client.update', compact('clients'));
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -80,12 +85,20 @@ class KategoriController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'kategori' => 'required|string',
+                'nama_client' => 'required|string',
+                'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
-            $kategori = Kategori::findOrFail($id);
-            $kategori->kategori = $validatedData['kategori'];
-            $kategori->save();
+            $client = Client::findOrFail($id);
+            $client->nama_client = $validatedData['nama_client'];
+            if ($request->hasFile('logo')) {
+                Storage::delete($client->logo);
+                $fotoPath = $request->file('logo')->store('public/client');
+                $fotoUrl = str_replace('public/', 'storage/', $fotoPath);
+                $client->logo = $fotoUrl;
+            }
+
+            $client->save();
             Alert::success('Success', 'Data Berhasil Diupdate')->showConfirmButton('OK', '#3085d6');
             return redirect()->back();
         } catch (\Exception $e) {
@@ -100,8 +113,9 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         try {
-            $kategori = Kategori::findOrFail($id);
-            $kategori->delete();
+            $client = Client::findOrFail($id);
+            $client->delete();
+            Storage::delete($client->logo);
             Alert::success('Success', 'Data Berhasil Dihapus')->showConfirmButton('OK', '#3085d6');
             return redirect()->back()->with('success', 'Data Berhasil Dihapus');
         } catch (\Exception $e) {

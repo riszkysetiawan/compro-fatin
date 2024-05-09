@@ -1,4 +1,4 @@
-@extends('admin.partials.portofolio.update')
+@extends('admin.partials.portofolio.create')
 @section('container')
     <div class="container">
         <div class="container">
@@ -26,20 +26,15 @@
                             </div>
                         </div>
                         <div class="widget-content widget-content-area">
-                            <form method="post" action="{{ route('portofolio.update', $portofolio->id) }}"
-                                enctype="multipart/form-data">
+                            <form method="post" action="{{ route('simpan.portofolio') }}" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
                                 <div class="row mb-3">
-                                    <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
+                                    <label for="inputEmail2" class="col-sm-2 col-form-label">Kategori</label>
                                     <div class="col-sm-10">
-                                        <select name="id_kategori" id="kategori" class="form-control" required>
+                                        <select name="id_kategori" id="id_kategori" class="form-control" required>
                                             <option value="">Pilih Kategori</option>
-                                            @foreach ($kategories as $kategori)
-                                                <option value="{{ $kategori->id }}"
-                                                    {{ $portofolio->id_kategori == $kategori->id ? 'selected' : '' }}>
-                                                    {{ $kategori->kategori }}
-                                                </option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->kategori }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -48,31 +43,21 @@
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Nama Portofolio</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="nama_portofolio" class="form-control"
-                                            value="{{ $portofolio->nama_portofolio }}" id="inputPassword2" required />
+                                            id="inputPassword2" required />
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="inputPassword2" class="col-sm-2 col-form-label">keterangan</label>
+                                    <label for="inputPassword2" class="col-sm-2 col-form-label">Keterangan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" value="{{ $portofolio->keterangan }}"
-                                            name="keterangan" id="inputPassword2"required />
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword2" class="col-sm-2 col-form-label">Foto Lama</label>
-                                    <div class="col-sm-10">
-                                        @if ($portofolio->foto)
-                                            <img src="{{ asset($portofolio->foto) }}" alt="Foto Lama"
-                                                style="max-width: 200px;">
-                                        @else
-                                            <span>Tidak ada foto</span>
-                                        @endif
+                                        <input type="text" class="form-control" name="keterangan"
+                                            id="inputPassword2"required />
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Foto</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="foto" class="form-control" id="inputPassword2" />
+                                        <input type="file" name="foto" class="form-control" id="inputPassword2"
+                                            required />
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">

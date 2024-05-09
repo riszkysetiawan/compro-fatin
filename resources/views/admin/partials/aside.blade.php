@@ -13,7 +13,7 @@
                 <div class="nav-logo">
                     <div class="nav-item theme-logo">
                         <a href="./index.html">
-                            <img src="../src/assets/img/logo.svg" class="navbar-logo" alt="logo">
+                            <img src="{{ asset('navbar/logo.png') }}" class="navbar-logo" alt="logo">
                         </a>
                     </div>
                     <div class="nav-item theme-text">
@@ -120,7 +120,20 @@
                     </ul>
                 </li>
                 <li class="menu">
-                    <a href="/porotofolio" aria-expanded="false" class="dropdown-toggle">
+                    <a href="{{ route('kategori.index') }}" aria-expanded="false" class="dropdown-toggle">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Kategori</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="menu">
+                    <a href="{{ route('portofolio.index') }}" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -133,7 +146,7 @@
                     </a>
                 </li>
                 <li class="menu">
-                    <a href="/porotofolio" aria-expanded="false" class="dropdown-toggle">
+                    <a href="{{ route('client.index') }}" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -141,10 +154,23 @@
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            <span>Team</span>
+                            <span>Clients</span>
                         </div>
                     </a>
                 </li>
+                {{-- <li class="menu">
+                    <a href="{{ route('teams.index') }}" aria-expanded="false" class="dropdown-toggle">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Portofolio</span>
+                        </div>
+                    </a>
+                </li> --}}
 
 
                 <li class="menu menu-heading">
@@ -178,7 +204,7 @@
                     </a>
                     <ul class="collapse submenu list-unstyled" id="users" data-bs-parent="#accordionExample">
                         <li>
-                            <a href="#">List User </a>
+                            <a href="{{ route('user.index') }}">List User </a>
                         </li>
                     </ul>
                 </li>
