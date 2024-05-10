@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Services;
 
-class Portofolio extends Model
+class DetailSliderServices extends Model
 {
     use HasFactory;
-    protected $table = 'portofolio';
+    protected $table = 'detail_slider_services';
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
-    public function kategori()
+    public function service()
     {
-        return $this->belongsTo(Kategori::class, 'id_kategori');
+        return $this->belongsTo(Services::class, 'id_services');
     }
 }

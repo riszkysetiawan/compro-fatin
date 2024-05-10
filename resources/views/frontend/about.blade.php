@@ -1,8 +1,8 @@
 @extends('partials.index')
 @section('container')
     {{-- section 1 --}}
-    <div class="about-us-1 py-5 my-5">
-        <div class="container">
+    <div class="about-us-1 py-5 my-5" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
             <h1 class="text-center" style="color: #C24914">Tentang Gawl Studio</h1>
             <h5 class="text-center">Creative Your Movement</h5>
             <div class="konten-about-1">
@@ -17,14 +17,14 @@
     </div>
     {{-- section 1 end --}}
     {{-- section 2 --}}
-    <div class="section-2-about my-5 py-5">
-        <div class="container-fluid">
-            <div class="row mb-3 text-center">
+    <div class="section-2-about my-5 py-5" data-aos="fade-up">
+        <div class="container-fluid" data-aos="fade-up">
+            <div class="row mb-3 text-center" data-aos="fade-up">
                 <div class="col-md-4 themed-grid-col"><img src="{{ asset('about/about.png') }}" alt="about"></div>
                 <div class="col-md-4 themed-grid-col"><img src="{{ asset('about/about.png') }}" alt="about"></div>
                 <div class="col-md-4 themed-grid-col"><img src="{{ asset('about/about.png') }}" alt="about"></div>
             </div>
-            <div class="row mb-3 text-center">
+            <div class="row mb-3 text-center" data-aos="fade-up">
                 <div class="col-6 col-md-4 themed-grid-col"><img src="{{ asset('about/about.png') }}" alt="about"
                         width="100%"></div>
                 <div class="col-6 col-md-4 themed-grid-col"><img src="{{ asset('about/about.png') }}" alt="about"
@@ -36,7 +36,7 @@
     </div>
     {{-- section 2 end --}}
     {{-- section 3 start --}}
-    <div class="jasa-kami my-5 py-5" style="background-color: #FAEA4F">
+    <div class="jasa-kami my-5 py-5" style="background-color: #FAEA4F" data-aos="fade-up">
         <div class="container">
             <h4 class="text-center" style="color: #C24914">Apa saja jasa yang kami tawarkan?</h4>
             <div class=" d-flex justify-content-center">
@@ -52,8 +52,8 @@
     {{-- section 3 end --}}
 
     {{-- section 4 --}}
-    <div class="keunggulan">
-        <div class="container">
+    <div class="keunggulan" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
             <h4 class="text-center" style="color: #C24914">Keunggulan Gawl Studio :</h4>
             <div class="row p-5">
                 <div class="col-md-4">
@@ -84,7 +84,7 @@
                         marketing, dan lainnya.</h6>
                 </div>
             </div>
-            <div class="my-5 py-5">
+            <div class="my-5 py-5" data-aos="fade-up">
                 <h5 class="container text-center">Dengan adanya jasa serta strategi branding yang dimiliki oleh Gawl
                     Studio,<br>
                     diharapkan dapat menunjang
@@ -99,40 +99,20 @@
     {{-- section 4 end --}}
 
     {{-- section 5 --}}
-    <div class="management-team py-5 my-5">
+    <div class="management-team py-5 my-5" data-aos="fade-up">
         <div class="container">
             <h3 class="text-center p-5" style="color: #C24914">Management Team</h3>
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="{{ asset('slider/slider1.png') }}" alt="Nama Gambar" class="img-fluid rounded-pill"
-                        style="background-color: black">
-                    <div class="text-center pt-4">
-                        <h6 style="color: #C24914">Lutfi Amalia Adel, S.Pd, M.Si</h6>
-                        <h6>Direktur</h6>
+            <div class="row d-flex justify-content-center flex-wrap" data-aos="fade-up">
+                @foreach ($teams as $team)
+                    <div class="col-md-3">
+                        <img src="{{ asset($team->foto) }}" alt="{{ $team->nama }}" class="img-fluid rounded-pill"
+                            style="background-color: black">
+                        <div class="text-center pt-4">
+                            <h6 style="color: #C24914">{{ $team->nama }}</h6>
+                            <h6>{{ $team->jabatan }}</h6>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <img src="{{ asset('slider/slider1.png') }}" alt="Nama Gambar" class="img-fluid rounded-pill"
-                        style="background-color: black">
-                    <div class="text-center pt-4">
-                        <h6 style="color: #C24914">Lutfi Amalia Adel, S.Pd, M.Si</h6>
-                        <h6>Direktur</h6>
-                    </div>
-                </div>
-                <div class="col-md-3"> <img src="{{ asset('slider/slider1.png') }}" alt="Nama Gambar"
-                        class="img-fluid rounded-pill" style="background-color: black">
-                    <div class="text-center pt-4">
-                        <h6 style="color: #C24914">Lutfi Amalia Adel, S.Pd, M.Si</h6>
-                        <h6>Direktur</h6>
-                    </div>
-                </div>
-                <div class="col-md-3"> <img src="{{ asset('slider/slider1.png') }}" alt="Nama Gambar"
-                        class="img-fluid rounded-pill" style="background-color: black">
-                    <div class="text-center pt-4">
-                        <h6 style="color: #C24914">Lutfi Amalia Adel, S.Pd, M.Si</h6>
-                        <h6>Direktur</h6>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

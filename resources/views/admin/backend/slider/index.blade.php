@@ -22,8 +22,8 @@
                         <table id="zero-config" class="table table-striped dt-table-hover" style="width: 100%">
                             <thead>
                                 <tr>
-                                    <th>Gambar Utama</th>
-                                    <th>Gambar Kecil</th>
+                                    {{-- <th>Gambar Utama</th> --}}
+                                    <th>Gambar </th>
                                     <th>Judul</th>
                                     <th>Sub Judul</th>
                                     <th>Keterangan</th>
@@ -35,10 +35,10 @@
                             <tbody>
                                 @foreach ($sliders as $slider)
                                     <tr>
-                                        <td>
+                                        {{-- <td>
                                             <img src="{{ asset($slider->foto_utama) }}" alt="Gambar" class="img-fluid "
                                                 style="max-width: 200px" />
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             <img src="{{ asset($slider->foto) }}" alt="Gambar" class="img-fluid "
                                                 style="max-width: 200px" />
@@ -59,8 +59,8 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Gambar Utama</th>
-                                    <th>Gambar Kecil</th>
+                                    <th>Gambar</th>
+                                    {{-- <th>Gambar Kecil</th> --}}
                                     <th>Judul</th>
                                     <th>Sub Judul</th>
                                     <th>Keterangan</th>

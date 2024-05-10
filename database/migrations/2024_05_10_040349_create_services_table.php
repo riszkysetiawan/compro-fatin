@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Banner_Slider', function (Blueprint $table) {
+        Schema::create('service', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('sub_judul');
-            $table->string('caption');
-            $table->string('button');
-            $table->string('foto');
-            // $table->string('foto_utama');
-            $table->string('bg_foto');
+            $table->string('nama_service');
             $table->timestamps();
         });
     }
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Banner_Slider');
+        Schema::dropIfExists('service');
     }
 };

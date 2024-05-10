@@ -45,7 +45,7 @@ class BannerSliderController extends Controller
             'caption' => 'required|string',
             'button' => 'required|string',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'foto_utama' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            // 'foto_utama' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'bg_foto' => 'required|string',
         ]);
 
@@ -63,11 +63,11 @@ class BannerSliderController extends Controller
             $bannerSlider->foto = $fotoUrl;
         }
 
-        if ($request->hasFile('foto_utama')) {
-            $fotoUtamaPath = $request->file('foto_utama')->store('public/slider');
-            $fotoUtamaUrl = str_replace('public/', 'storage/', $fotoUtamaPath);
-            $bannerSlider->foto_utama = $fotoUtamaUrl;
-        }
+        // if ($request->hasFile('foto_utama')) {
+        //     $fotoUtamaPath = $request->file('foto_utama')->store('public/slider');
+        //     $fotoUtamaUrl = str_replace('public/', 'storage/', $fotoUtamaPath);
+        //     $bannerSlider->foto_utama = $fotoUtamaUrl;
+        // }
 
         $bannerSlider->save();
         Alert::success('Success', 'Data saved successfully!')->showConfirmButton('OK', '#3085d6');
@@ -107,7 +107,7 @@ class BannerSliderController extends Controller
                 'caption' => 'required|string',
                 'button' => 'required|string',
                 'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'foto_utama' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                // 'foto_utama' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'bg_foto' => 'required|string',
             ]);
 
@@ -125,12 +125,12 @@ class BannerSliderController extends Controller
                 $slider->foto = $fotoUrl;
             }
 
-            if ($request->hasFile('foto_utama')) {
-                Storage::delete($slider->foto_utama);
-                $fotoUtamaPath = $request->file('foto_utama')->store('public/slider');
-                $fotoUtamaUrl = str_replace('public/', 'storage/', $fotoUtamaPath);
-                $slider->foto_utama = $fotoUtamaUrl;
-            }
+            // if ($request->hasFile('foto_utama')) {
+            //     Storage::delete($slider->foto_utama);
+            //     $fotoUtamaPath = $request->file('foto_utama')->store('public/slider');
+            //     $fotoUtamaUrl = str_replace('public/', 'storage/', $fotoUtamaPath);
+            //     $slider->foto_utama = $fotoUtamaUrl;
+            // }
 
             $slider->save();
             Alert::success('Success', 'Data Berhasil Diupdate')->showConfirmButton('OK', '#3085d6');

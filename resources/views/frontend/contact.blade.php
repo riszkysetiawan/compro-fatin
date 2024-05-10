@@ -16,34 +16,34 @@
     {{-- section 1 end --}}
 
     {{-- section 2 --}}
-    <div class="formulir-client">
-        <div class="container mx-5 px-5">
-            <form action="" class="mx-5 px-5">
-                <div class="text-center py-5">
-                    <i class="fa-solid fa-book-open" style="font-size: 10rem"></i>
+    <div class="formulir-client py-3">
+        <div class="container ">
+            <form action="{{ route('simpan.contact.user') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="text-center py-1">
+                    <i class="fa-solid fa-book-open" style="font-size: 8rem"></i>
                     <h4>Formulir Klien</h4>
                 </div>
-
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Lengkap*</label>
                     <div class="col-sm-10">
-                        <input type="text" name="nama_lengkap" class="form-control" id="inputEmail3">
+                        <input type="text" name="nama" class="form-control" id="inputEmail3">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Alamat Email*</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputPassword3">
+                        <input type="email" name="email" class="form-control" id="inputPassword3">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">No Telp / WhatsApp*</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputPassword3">
+                        <input type="text" name="telp" class="form-control" id="inputPassword3">
                     </div>
                 </div>
                 <div class="text-center">
-                    <button class="btn mt-3 rounded-pill text-white btn-lg" type="button"
+                    <button class="btn mt-3 rounded-pill text-white btn-lg" type="submit"
                         style="background-color: #C24914">Kirim Formulir</button>
                 </div>
             </form>
@@ -52,6 +52,5 @@
     {{-- section 2 end --}}
 
     {{-- section 3 start --}}
-
     {{-- section 3 end --}}
 @endsection

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
-use App\Http\Requests\StoreContactRequest;
-use App\Http\Requests\UpdateContactRequest;
+use App\Models\Services;
+use App\Http\Requests\StoreServicesRequest;
+use App\Http\Requests\UpdateServicesRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Crypt;
 
-class ContactController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +20,8 @@ class ContactController extends Controller
         $title = 'Delete Data!';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
-        $contacts = DB::table('contact')->get();
-        return view('admin.backend.contact.index', ['contacts' => $contacts]);
+        $services = DB::table('service')->get();
+        return view('admin.backend.services.index', ['services' => $services]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('admin.backend.contact.tambah');
+        return view('admin.backend.services.tambah');
     }
 
     /**
@@ -39,16 +39,12 @@ class ContactController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'nama' => 'required|string',
-                'email' => 'required|string',
-                'telp' => 'required|string',
+                'nama_service' => 'required|string',
             ]);
-            $contact = new Contact([
-                'nama' => $validatedData['nama'],
-                'email' => $validatedData['email'],
-                'telp' => $validatedData['telp'],
+            $services = new Services([
+                'nama_service' => $validatedData['nama_service'],
             ]);
-            $contact->save();
+            $services->save();
             Alert::success('Success', 'Data saved successfully!')->showConfirmButton('OK', '#3085d6');
             return redirect()->back();
         } catch (\Exception $e) {
@@ -56,31 +52,12 @@ class ContactController extends Controller
             return redirect()->back();
         }
     }
-    public function storeuser(Request $request)
-    {
-        try {
-            $validatedData = $request->validate([
-                'nama' => 'required|string',
-                'email' => 'required|string',
-                'telp' => 'required|string',
-            ]);
-            $contact = new Contact([
-                'nama' => $validatedData['nama'],
-                'email' => $validatedData['email'],
-                'telp' => $validatedData['telp'],
-            ]);
-            $contact->save();
-            Alert::success('Success', 'Data saved successfully!')->showConfirmButton('OK', '#3085d6');
-            return redirect()->back();
-        } catch (\Exception $e) {
-            Alert::error('Error', 'Gagal menyimpan data')->showConfirmButton('OK', '#d33');
-            return redirect()->back();
-        }
-    }
+
+
     /**
      * Display the specified resource.
      */
-    public function show(Contact $contact)
+    public function show(Services $services)
     {
         //
     }
@@ -91,10 +68,9 @@ class ContactController extends Controller
     public function edit($encryptedId)
     {
         $id = Crypt::decrypt($encryptedId);
-        $contact = Contact::findOrFail($id);
-        return view('admin.backend.contact.update', compact('contact'));
+        $services = Services::findOrFail($id);
+        return view('admin.backend.services.update', compact('services'));
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -102,17 +78,12 @@ class ContactController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'nama' => 'required|string',
-                'email' => 'required|string',
-                'telp' => 'required|string',
+                'nama_service' => 'required|string',
             ]);
 
-            $contact = Contact::findOrFail($id);
-            $contact->nama = $validatedData['nama'];
-            $contact->email = $validatedData['email'];
-            $contact->telp = $validatedData['telp'];
-
-            $contact->save();
+            $service = Services::findOrFail($id);
+            $service->nama_service = $validatedData['nama_service'];
+            $service->save();
             Alert::success('Success', 'Data Berhasil Diupdate')->showConfirmButton('OK', '#3085d6');
             return redirect()->back();
         } catch (\Exception $e) {
@@ -127,8 +98,8 @@ class ContactController extends Controller
     public function destroy($id)
     {
         try {
-            $contact = Contact::findOrFail($id);
-            $contact->delete();
+            $services = Services::findOrFail($id);
+            $services->delete();
             Alert::success('Success', 'Data Berhasil Dihapus')->showConfirmButton('OK', '#3085d6');
             return redirect()->back()->with('success', 'Data Berhasil Dihapus');
         } catch (\Exception $e) {

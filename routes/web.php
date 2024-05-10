@@ -9,6 +9,13 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\DetailServicesController;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\PortofolioPageController;
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,15 +27,10 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home');
-})->name('home');
-Route::get('/about-us', function () {
-    return view('frontend.about');
-});
-Route::get('/portofolio-us', function () {
-    return view('frontend.portofolio');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about');
+Route::get('/portofolio-us', [PortofolioPageController::class, 'index'])->name('portofolio.page');
+
 Route::get('/contact', function () {
     return view('frontend.contact');
 });
@@ -36,7 +38,8 @@ Route::get('/services/foto-product', function () {
     return view('frontend.services.fotoproduk');
 });
 
-
+// contact user
+Route::post('/simpan-contact-user', [ContactController::class, 'storeuser'])->name('simpan.contact.user');
 
 // login
 Route::get('/login', [AuthController::class, 'index'])->name('login');
@@ -120,4 +123,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile-admin', [ProfileController::class, 'index'])->name('profile.index');
     Route::get('/profile-edit', [ProfileController::class, 'edit'])->name('edit.profile');
     Route::put('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+
+    // crud services
+    Route::get('/services-admin', [ServicesController::class, 'index'])->name('services.index');
+    Route::get('/create-services-admin', [ServicesController::class, 'create'])->name('tambah.services');
+    Route::post('/simpan-services', [ServicesController::class, 'store'])->name('simpan.services');
+    Route::put('/services/{id}', [ServicesController::class, 'update'])->name('services.update');
+    Route::get('/services/{id}/edit', [ServicesController::class, 'edit'])->name('services.edit');
+    Route::delete('/delete-services/{id}', [ServicesController::class, 'destroy'])->name('delete.services');
+
+    // crud contact admin
+    Route::get('/contact-admin', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('/create-contact-admin', [ContactController::class, 'create'])->name('tambah.contact');
+    Route::post('/simpan-contact', [ContactController::class, 'store'])->name('simpan.contact');
+    Route::put('/contact/{id}', [ContactController::class, 'update'])->name('update.contact');
+    Route::get('/contact/{id}/edit', [ContactController::class, 'edit'])->name('contact.edit');
+    Route::delete('/delete-contact/{id}', [ContactController::class, 'destroy'])->name('delete.contact');
+
+    // crud foto dan detail services
+    Route::get('/detail-services-admin', [DetailServicesController::class, 'index'])->name('detailservices.index');
 });

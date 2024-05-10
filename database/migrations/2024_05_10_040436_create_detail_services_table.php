@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Banner_Slider', function (Blueprint $table) {
+        Schema::create('detail_service', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_services');
             $table->string('judul');
-            $table->string('sub_judul');
+            $table->string('keterangan');
             $table->string('caption');
-            $table->string('button');
-            $table->string('foto');
-            // $table->string('foto_utama');
-            $table->string('bg_foto');
+            $table->string('caption_slider1');
+            $table->string('caption_slider2');
+            $table->string('caption_slider3');
             $table->timestamps();
+            $table->foreign('id_services')->references('id')->on('service')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Banner_Slider');
+        Schema::dropIfExists('detail_service');
     }
 };

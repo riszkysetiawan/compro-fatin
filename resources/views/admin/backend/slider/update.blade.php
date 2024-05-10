@@ -68,7 +68,7 @@
                                         <input type="file" name="foto" class="form-control" id="inputPassword2" />
                                     </div>
                                 </div>
-                                <div class="row mb-3">
+                                {{-- <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Foto Utama Lama</label>
                                     <div class="col-sm-10">
                                         @if ($slider->foto)
@@ -84,7 +84,7 @@
                                     <div class="col-sm-10">
                                         <input type="file" name="foto_utama" class="form-control" id="inputPassword2" />
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">Text Button</label>
                                     <div class="col-sm-10">
